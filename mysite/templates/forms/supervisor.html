@@ -1,0 +1,123 @@
+{% extends 'forms/base.html' %}
+
+{% block title %}
+<span class="branding w3-bar-item w3-mobile" id="logged">Hello! {{name}} You are Logged in.</span>
+{% endblock %}
+
+{% block nav %}
+<a class="w3-bar-item w3-button w3-mobile w3-center w3-active-orange w3-hover-orange" id="applybtn" 
+href="apply">Apply Leave</a>
+<a class="w3-bar-item w3-button w3-mobile w3-center w3-active-orange w3-hover-orange" id="profilebtn" 
+href="#">My Profile</a>
+{% endblock %}
+
+{% block note %}{% endblock %}
+{% block logout %}Logout{% endblock %}
+{% block content %}
+
+
+<div>
+    <h1 class="w3-border-bottom w3-center">LEAVE APPROVAL BY IMMEDIATE SUPERVISOR</h1>
+    {% for leave in leaves %}
+    <form action='/sup' method="post" class="approve">
+        {% csrf_token %}
+        <div class="w3-container w3-cell-row" id="span" 
+            style="width:100%; border: 1px solid green; border-radius: 15px; padding: 10px;">
+            <table class="w3-table w3-bordered w3-hoverable">
+                <div class="w3-border-bottom">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Type of Leave</th>
+                        <th>Applied On</th>
+                        <th>Leave Id</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>{{leave.staff.user.first_name}}</td>
+                        <td>{{leave.staff.user.last_name}}</td>
+                        <td>{{leave.leave_type}}</td>
+                        <td>{{leave.date}}</td>
+                        <td class="w3-center"><input value="{{leave.id}}" name="leave_id"></td>
+                    </tr>
+                    
+                <div>
+            </table>
+            <div  id="approve">
+                <p>The duties usually performed by the applicant will now be performed by;</p>
+                <div class="w3-cell-row" style="margin-bottom: 20px;">
+                    <div class="group w3-cell">
+                        <label>First Name: </label>
+                        <input type="text" style placeholder="Persons First Name" name="sub_fname">
+                    </div>
+                    <div class="group w3-cell">
+                        <label>Last Name: </label>
+                        <input type="text" style placeholder="Persons Last Name" name="sub_lname">
+                    </div>
+                    <div class="group w3-cell">
+                        <Label>Job Title:</Label>
+                        <input type="text" id='Job Title' placeholder="Job Title" name="sub_job">
+                    </div>
+                </div>
+                <div class="w3-cell-row" style="margin-bottom: 20px;">
+                    <div class="w3-cell">
+                        <Label>Personal Number:</Label>
+                        <input type="number" id='pjnumber' placeholder="PJ Number" name="sub_pjnumber">
+                    </div>
+                    <div class="group w3-cell">
+                        <Label>Unit/Department:</Label>
+                        <input type="text" id='Unit/Department' placeholder="Unit/Department" name="sub_dept">
+                    </div>
+                </div>
+                <p>This leave is;</p>
+                <div  class="group w3-cell-row" style="margin-bottom: 20px;">
+                    <input type="radio" name="approved" value="True" required>Approved
+                </div>
+                <div  class="group w3-cell-row" style="margin-bottom: 20px;">
+                    <input type="radio" name="approved" value="False" required>Not Approved
+                </div>
+                <div class="group w3-cell-row" style="margin-bottom: 20px;">
+                    <Label>Approvers Comment:</Label>
+                </div>
+                <div class="group w3-cell-row" style="margin-bottom: 20px;">
+                    <textarea rows="4" cols="50" name = "comments"></textarea>
+                </div>
+                <div class="group w3-cell-row" style="margin-bottom: 20px;">
+                    <div class="group w3-cell">
+                        <Label>Approvers Full Name:</Label>
+                        <input class="w3-input" type="text" value="{{full_name}}" name="full_Name" disabled>
+                    </div>
+                    <div class="group w3-cell">
+                        <Label>Signature:</Label>
+                        <input type="text" placeholder="{{name}}" name="fame" disabled>
+                    </div>
+                    <div class="group w3-cell">
+                        <Label>Date:</Label>
+                        <input type="date" placeholder="Date" name="date" required>
+                    </div>
+                </div>
+                    
+                <div class="w3-cell-row" style="margin-bottom: 20px;">
+                    <div class="group w3-cell w3-center">
+                        <button class="w3-button w3-green w3-hover-orange">Save</button>
+                    </div>
+                </div>                
+            
+            </div>
+        </div>
+    </form>
+    {% endfor %}
+</div>
+
+{% if user.is_authenticated %}
+{% for message in messages %}
+    <script>alert('{{message}}')</script>
+{% endfor %}
+
+{% else %}
+<script>alert(request, "You are not authorized to view this page. Please login.")</script>
+{% endif %}
+
+{% endblock %}
+
+

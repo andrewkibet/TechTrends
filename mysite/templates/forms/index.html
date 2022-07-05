@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kericho Law Courts</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'forms/w3.css' %}">
+	<script type="text/javascript" src="{% static 'forms/jquery/jquery.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+		<div class="w3-bar w3-cell-row w3-border w3-round-large w3-green" id="top"
+		style="height: 20px;">
+			<span class="branding w3-bar-item w3-mobile">{% block head%} Welcome to Kericho Law Courts Site. {% endblock %}</span>
+			<span class="w3-right w3-mobile">
+				<a class="w3-bar-item w3-button w3-mobile w3-hover-orange w3-active w3-active-orange" href="#">Leave</a>
+				<a class="w3-bar-item w3-button w3-mobile w3-hover-orange" href="#">PAS</a>
+				<a class="w3-bar-item w3-button w3-mobile w3-hover-orange" href="#">Link 2</a>
+				<a class="w3-bar-item w3-button w3-mobile w3-hover-orange" href="#">link 3</a>
+			</span>
+		</div>
+
+		<div class="w3-cell-row">
+			<div class="w3-container w3-green w3-cell w3-bar-block w3-border w3-round-large" id="nav"
+			 style="width:15%; height: 600px;">
+			  <div class="w3-bar-item" id="iconbar">
+				<img src="{% static 'forms/imges/jcsi1.png' %}" class="w3-circle" alt="Judiciary Kenya">
+			  </div>
+			  <div class="w3-bar-item w3-center" id="span" style="font-size: 20px; color: orange;">Judicial Service Commission</div>
+			  <span>
+                {% block content %}
+					<a class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-center w3-active-orange w3-hover-orange" id="homebtn" 
+					href="#">Home</a>
+					<a class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-center w3-active-orange w3-hover-orange" id="loginbtn" 
+					href="/">Login</a>
+					<a class="w3-bar-item w3-button w3-mobile w3-border-bottom w3-center w3-active-orange w3-hover-orange" id="registerbtn" 
+					href="/signup">Register</a>
+                {% endblock %}
+			  </span>
+
+			</div>
+            <div class="w3-container w3-cell w3-center" style="width:85%;">
+                <div class="showcase w3-border-green">
+                    <p class="w3-border-bottom w3-border-orange" id="p1">
+						{% for message in messages %}
+						{{message}}
+						{% endfor %}<br>
+					</p>
+                    <img src="{% static 'forms/imges/jssc.png' %}" class="w3-text" alt="Judiciary Kenya">
+                    <h1 class="w3-shadow w3-border-bottom w3-border-green">Access All</h1>
+                    <hr>
+                    <p>You need to be logged in to access all the features of this website. Click the Start Here button to login to your 
+                        account or use the navigation bar.<br> If you don't have an account create one by registering and enjoy the services offered.
+                    </p> 
+                    <a class="w3-button w3-card w3-red w3-hover-orange w3-large" href="/">Start Here</a>
+                </div>
+                    
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
