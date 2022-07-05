@@ -177,7 +177,7 @@ def apply(request):
             sfname = request.POST['sfname']
             slname = request.POST['slname']
 
-            sup = User.objects.post(first_name=sfname, last_name=slname)
+            sup = User.objects.get(first_name=sfname, last_name=slname)
             executive = User.objects.get(first_name=efname, last_name=elname)
             if sup is not None and executive is not None:
                 sup_mail = sup.email
