@@ -26,3 +26,5 @@ For this assignment, you will create three forensic images.  Please follow the i
 Please Note: When you have successfully completed these exercises, you can securely delete all of the forensic images so they don't take up too much space.  Also, be sure to remove write protection from your USB drives so they function properly.     
 
 
+anaylysis of logs files splunks
+
