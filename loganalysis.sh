@@ -15,3 +15,14 @@ cat logrotate
 cat /etc/logrotate.conf
 cat /etc/crontab
 sudo lsof -i :8000 # This checks whats running on port 8000
+
+sudo lsof -i :8000                                                                                                                              1 ⨯
+COMMAND     PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+docker-pr 15375 root    4u  IPv4 101066      0t0  TCP *:8000 (LISTEN)
+docker-pr 15383 root    4u  IPv6 101477      0t0  TCP *:8000 (LISTEN)
+                                                                                                                                                        
+┌──(rootKALI)-[~/splunk-setup]
+└─# sudo kill -9 15375
+                                                                                                                                                        
+┌──(rootKALI)-[~/splunk-setup]
+└─# sudo kill -9 15383
