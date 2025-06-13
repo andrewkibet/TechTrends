@@ -11,3 +11,7 @@ docker start splunk
 cd /etc/cron.daily #Logrotate is controlled by the cron system. Cron is a Linux service that allows you to run commands or scripts at 
 #pecific times or intervals—unattended. By default, your Linux system likely has a cron job set up to run logrotate daily. 
 #his cron job is usually located in a file /etc/cron.daily/logrotate.
+cat logrotate
+cat /etc/logrotate.conf
+cat /etc/crontab
+sudo lsof -i :8000 # This checks whats running on port 8000
