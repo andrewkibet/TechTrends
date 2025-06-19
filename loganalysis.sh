@@ -26,3 +26,16 @@ docker-pr 15383 root    4u  IPv6 101477      0t0  TCP *:8000 (LISTEN)
                                                                                                                                                         
 ┌──(rootKALI)-[~/splunk-setup]
 └─# sudo kill -9 15383
+
+Now, docker and splunk work together and they is a file that is of much importance: docker-compose.yml
+
+version: "3"
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
