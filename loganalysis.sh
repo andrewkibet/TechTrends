@@ -39,3 +39,11 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: example
+
+
+
+
+OFFSET=$(expr 512 \* 2048)  
+mkdir -p /mnt/linux_image  
+losetup -o ${OFFSET} /dev/loop0 ./linux_lab_final_acme_corp.img  
+mount -t auto /dev/loop0 /mnt/linux_image 
