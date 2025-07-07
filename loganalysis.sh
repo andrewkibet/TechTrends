@@ -54,3 +54,11 @@ find / -name "linux_lab_final_acme_corp.img" 2>/dev/null # Used to llocate the i
 #Hardening Process of Windows system
 
 #STIG & SCAP Resources
+ #SCAP (Security Content Automation Protocol)
+#SCAP is a standard used to automate vulnerability checks and security compliance using tools. SCAP content includes:
+
+#Machine-readable checks (e.g., XML files)
+
+#redefined rules (like password settings, firewall configs)
+
+#So instead of manually checking if a system is compliant, SCAP tools automatically scan it using these rules.
