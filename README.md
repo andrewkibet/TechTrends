@@ -39,3 +39,9 @@ Predefined rules (like password settings, firewall configs)
 
 So instead of manually checking if a system is compliant, SCAP tools automatically scan it using these rules.
 
+# SCC (SCAP Compliance Checker)
+SCC is a tool developed by DISA that reads STIGs in SCAP format and scans your systems for compliance.
+
+You run the SCC scanner, point it at a device, and it tells you which rules pass/fail.
+
+Output can be imported back into STIG Viewer for manual review.
