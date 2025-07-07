@@ -50,3 +50,7 @@ mount -t auto /dev/loop0 /mnt/linux_image
 
 
 find / -name "linux_lab_final_acme_corp.img" 2>/dev/null # Used to llocate the image
+
+#Hardening Process of Windows system
+
+#STIG & SCAP Resources
