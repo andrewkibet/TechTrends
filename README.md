@@ -28,3 +28,14 @@ Please Note: When you have successfully completed these exercises, you can secur
 
 anaylysis of logs files splunks
 
+
+# SCAP and SCC Files
+🔸 SCAP (Security Content Automation Protocol)
+SCAP is a standard used to automate vulnerability checks and security compliance using tools. SCAP content includes:
+
+Machine-readable checks (e.g., XML files)
+
+Predefined rules (like password settings, firewall configs)
+
+So instead of manually checking if a system is compliant, SCAP tools automatically scan it using these rules.
+
