@@ -62,3 +62,9 @@ find / -name "linux_lab_final_acme_corp.img" 2>/dev/null # Used to llocate the i
 #redefined rules (like password settings, firewall configs)
 
 #So instead of manually checking if a system is compliant, SCAP tools automatically scan it using these rules.
+
+
+## View All AD Groups
+
+Get-ADGroup -Filter * | Select Name, DistinguishedName | Format-Table
+
