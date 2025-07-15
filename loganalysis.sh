@@ -64,6 +64,10 @@ find / -name "linux_lab_final_acme_corp.img" 2>/dev/null # Used to llocate the i
 #So instead of manually checking if a system is compliant, SCAP tools automatically scan it using these rules.
 
 
+
+# mounting images
+
+mount -t auto /dev/loop0 /mnt/linux_image
 ## View All AD Groups
 
 Get-ADGroup -Filter * | Select Name, DistinguishedName | Format-Table
