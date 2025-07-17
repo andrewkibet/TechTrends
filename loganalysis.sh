@@ -72,3 +72,9 @@ mount -t auto /dev/loop0 /mnt/linux_image
 
 Get-ADGroup -Filter * | Select Name, DistinguishedName | Format-Table
 
+
+OFFSET=$(expr 512 \* 2048)
+mkdir -p /mnt/linux_image
+losetup -o ${OFFSET} /dev/loop0 /home/kibet/Downloads/linux_lab_final_acme_corp.img
+mount -t auto /dev/loop0 /mnt/linux_image
+
