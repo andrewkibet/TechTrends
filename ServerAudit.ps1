@@ -10,4 +10,5 @@ Get-MpComputerStatus
 # List installed updates
 wmic qfe list brief /format:table
 
-
+# List running services
+Get-Service | Where-Object {$_.Status -eq "Running"}
