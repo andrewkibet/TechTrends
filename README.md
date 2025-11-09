@@ -45,3 +45,7 @@ SCC is a tool developed by DISA that reads STIGs in SCAP format and scans your s
 You run the SCC scanner, point it at a device, and it tells you which rules pass/fail.
 
 Output can be imported back into STIG Viewer for manual review.
+
+
+
+Try working on Active Directory and also how to setup raid.
