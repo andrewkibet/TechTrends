@@ -49,3 +49,6 @@ Output can be imported back into STIG Viewer for manual review.
 
 
 Try working on Active Directory and also how to setup raid.
+
+
+SQl 
